@@ -9,5 +9,4 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps: 
-      - run: cd /home/Sander
-      - run: ./gitpull.sh
+      - run: ./home/Sander/gitpull.sh
