@@ -1,9 +1,11 @@
 <?php
 
-require "vendor/autoload.php";
+namespace processing;
+require "../vendor/autoload.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+
 //use PHPMailer\PHPMailer\SMTP;
 
 class Mail
@@ -35,29 +37,30 @@ class Mail
 
     public function sendSelf($submitMail, $submitName, $message): void
     {
-        $message = $submitName.' has contacted you from '.$submitMail.'.'.
-            '<br>They have sent you the following message: <br><br>'.
+        $message = $submitName . ' has contacted you from ' . $submitMail . '.' .
+            '<br>They have sent you the following message: <br><br>' .
             $message;
-        $subject = $submitName.'has tried to contact you';
-        $senderName = 'Contactform: '.$submitName;
+        $subject = $submitName . 'has tried to contact you';
+        $senderName = 'Contactform: ' . $submitName;
 
-        $this->sendMail('sander-grootjans@hotmail.com','contactForm: '.$submitName, $subject, $message, $senderName);
+        $this->sendMail('sander-grootjans@hotmail.com', 'contactForm: ' . $submitName, $subject, $message, $senderName);
     }
 
-    private function sendMail($rcpMail, $rcpName, $subject, $message, $senderName): void{
+    private function sendMail($rcpMail, $rcpName, $subject, $message, $senderName): void
+    {
         $this->logIn();
 
         try {
             $this->phpmailer->setFrom("mailtrap@sandergrootjans.online", $senderName);
         } catch (Exception $e) {
-            echo 'error: '.$e->getMessage();
+            echo 'error: ' . $e->getMessage();
         }
 
         try {
             $this->phpmailer->addAddress($rcpMail, $rcpName);
             echo '<br>added address';
         } catch (Exception $e) {
-            echo 'error: '.$e->getMessage();
+            echo 'error: ' . $e->getMessage();
         }
 
         $this->phpmailer->Subject = $subject;
@@ -69,7 +72,6 @@ class Mail
             echo $E;
         }
     }
-
 
 
     private function logIn(): void

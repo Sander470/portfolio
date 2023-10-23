@@ -18,8 +18,11 @@
 
 <?php
 
-include 'Database.php';
-include 'Mail.php';
+use processing\Database;
+use processing\Mail;
+
+include 'processing/Database.php';
+include 'processing/Mail.php';
 
 
 if(isset($_POST["submit"])) {

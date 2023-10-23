@@ -1,5 +1,9 @@
 <?php
 
+namespace processing;
+use Exception;
+use mysqli;
+
 class Database
 {
     private mysqli $conn;
@@ -13,12 +17,12 @@ class Database
         try {
             $json = file_get_contents($file);
         } catch (Exception $e) {
-            echo 'Error: '.$e->getMessage();
+            echo 'Error: ' . $e->getMessage();
         }
         try {
             $data = json_decode($json);
         } catch (Exception $e) {
-            echo 'Error: '.$e->getMessage();
+            echo 'Error: ' . $e->getMessage();
         }
 
         $this->host = $data->host;
@@ -48,7 +52,7 @@ class Database
                 $this->disconnectDB();
                 exit;
             }
-            echo '<br>Error: '.$e->getMessage();
+            echo '<br>Error: ' . $e->getMessage();
             $this->disconnectDB();
             exit;
         }
@@ -60,11 +64,11 @@ class Database
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
             echo '<br> Connection established succesfully';
         } catch (Exception $e) {
-            echo '<br>Error: '.$e->getMessage();
+            echo '<br>Error: ' . $e->getMessage();
         }
         // Create connection
         if ($this->conn->connect_error) {
-            exit('<br>Connection failed: '.$this->conn->connect_error);
+            exit('<br>Connection failed: ' . $this->conn->connect_error);
         }
     }
 
