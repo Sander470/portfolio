@@ -21,7 +21,6 @@
     <div id="hero">
         <p class="title">Alex</p>
         <p>Welcome to my portfolio website.</p>
-        <p>confirmation text</p>
     </div>
     <div id="about">
         <p class="header">About</p>
