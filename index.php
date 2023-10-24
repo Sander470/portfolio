@@ -27,7 +27,6 @@
         <p>I am Alex, a computer science student aspiring to learn and get comfortable with designing and developing
             modern web apps and games.</p>
     </div>
-    <button onclick="invertNav()">big button</button>
     <div id="projects">
         <p class="header">Projects</p>
         <div class="pGrid">

@@ -1,7 +1,7 @@
 <?php
 
 namespace processing;
-require "../vendor/autoload.php";
+require dirname(__DIR__, 1).'/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;

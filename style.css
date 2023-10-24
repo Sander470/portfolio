@@ -31,6 +31,16 @@ body {
     padding: 0;
 }
 
+/* Utility class */
+.selection::selection {
+    background: var(--primary);
+    color: var(--secondaryTxt);
+}
+.inverted::selection {
+    background: var(--secondaryTxt);
+    color: var(--primary);
+}
+
 /* Navbar */
 nav {
     top: 0;

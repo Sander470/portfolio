@@ -11,18 +11,15 @@
     </style>
 </head>
 <body>
-
-
 <h1><a href="javascript:history.go(-1)">Go back</a></h1>
-
-
 <?php
-
+include 'processing/Database.php';
+include 'processing/Mail.php';
 use processing\Database;
 use processing\Mail;
 
-include 'processing/Database.php';
-include 'processing/Mail.php';
+
+echo "hi";
 
 
 if(isset($_POST["submit"])) {
