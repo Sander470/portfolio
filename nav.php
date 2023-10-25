@@ -1,4 +1,4 @@
-<nav id="nav">
+<nav id="nav" class="selection">
     <div class="navBar">
         <p class="headerGradient"><a href="#top">Alex</a></p>
         <div class="navItems">
