@@ -1,7 +1,7 @@
 <?php
 
 namespace processing;
-require dirname(__DIR__, 1).'/vendor/autoload.php';
+require dirname(__DIR__, 1) . '/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -15,9 +15,11 @@ class Mail
     private $Username;
     private $Password;
     private phpmailer $phpmailer;
+    private bool $debug;
 
-    public function __construct($file)
+    public function __construct($file, $debug)
     {
+        $this->debug = $debug;
         // DECODING JSON DATA
         $json = file_get_contents($file);
         $data = json_decode($json);
@@ -58,7 +60,7 @@ class Mail
 
         try {
             $this->phpmailer->addAddress($rcpMail, $rcpName);
-            echo '<br>added address';
+            if($this->debug) {echo '<br>added address';};
         } catch (Exception $e) {
             echo 'error: ' . $e->getMessage();
         }

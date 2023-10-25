@@ -11,8 +11,9 @@ class Database
     private $username;
     private $password;
     private $dbname;
+    private bool $debug;
 
-    public function __construct($file)
+    public function __construct($file, $debug)
     {
         try {
             $json = file_get_contents($file);
@@ -29,6 +30,7 @@ class Database
         $this->username = $data->username;
         $this->password = $data->password;
         $this->dbname = $data->dbname;
+        $this->debug = $debug;
     }
 
     public function insertContactDetails($mail, $name, $message): void
@@ -45,10 +47,14 @@ class Database
     {
         try {
             $prepared->execute();
-            echo '<br>Inserted successfully!';
+            if($this->debug) {
+                echo '<br>Inserted successfully!';
+            }
         } catch (Exception $e) {
             if (str_contains($e->getMessage(), 'Duplicate entry')) {
-                echo '<br><h1>Combination of mail + message already in database.</h1>';
+                echo '<br><h1>You have already sent this message.</h1>';
+                echo '<h1><a href="javascript:history.go(-1)" style="text-decoration: underline; color: var(--secondaryTxt)">
+                Go back</a></h1>';
                 $this->disconnectDB();
                 exit;
             }
@@ -62,7 +68,9 @@ class Database
     {
         try {
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
+            if($this->debug){
             echo '<br> Connection established succesfully';
+            }
         } catch (Exception $e) {
             echo '<br>Error: ' . $e->getMessage();
         }
@@ -75,6 +83,8 @@ class Database
     private function disconnectDB(): void
     {
         $this->conn->close();
+        if($this->debug) {
         echo '<br>Connection closed.';
+        }
     }
 }
