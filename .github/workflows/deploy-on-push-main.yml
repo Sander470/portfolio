@@ -9,5 +9,5 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps: 
-      - working-directory: /home/Sander
-        run: ./gitpull.sh
+      - working-directory: /var/www/html
+        run: git clone
