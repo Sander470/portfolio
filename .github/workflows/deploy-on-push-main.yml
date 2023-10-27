@@ -9,5 +9,5 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps: 
-      - working-directory: /var/www/html
-        run: git clone https://github.com/Sander470/portfolio.git
+      - working-directory: /var/www/portfolio
+        run: git pull
