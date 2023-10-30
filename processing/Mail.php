@@ -32,9 +32,9 @@ class Mail
 
     public function sendConfirmation($submitMail, $submitName, $message): void
     {
-        $subject = 'Confirmation of contact request';
-        $senderName = 'Contactform Alex';
-        $this->sendMail($submitMail, $submitName, $subject, $message, $senderName);
+//        $subject = 'Confirmation of contact request';
+//        $senderName = 'Contactform Alex';
+//        $this->sendMail($submitMail, $submitName, $subject, $message, $senderName);
     }
 
     public function sendSelf($submitMail, $submitName, $message): void
