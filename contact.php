@@ -29,14 +29,14 @@
     include 'processing/Mail.php';
 
 if(isset($_POST["submit"])) {
-    $debug = false;
+    define ("debug", false);
 
     $name = $_POST['name'];
     $mail = $_POST['mail'];
     $message = $_POST['message'];
 
 
-    $database = new Database('../db.json', $debug);
+    $database = new Database('../db.json', debug);
     isDebug('<br>Created database object');
     $database->insertContactDetails($mail, $name, $message);
     isDebug('<br>Database action executed');
@@ -44,7 +44,7 @@ if(isset($_POST["submit"])) {
 
 
 
-    $mailer = new Mail('../mail.json', $debug);
+    $mailer = new Mail('../mail.json', debug);
     isDebug('<br>Created mail object');
     $mailer->sendConfirmation($mail, $name, $message);
     isDebug('<br>Email action executed');
@@ -56,8 +56,7 @@ if(isset($_POST["submit"])) {
 }
 function isDebug($str): void
 {
-    global $debug;
-    if($debug) {
+    if(debug) {
         echo $str;
     }
 }
