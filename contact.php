@@ -29,7 +29,7 @@
     include 'processing/Mail.php';
 
 if(isset($_POST["submit"])) {
-    $debug = true;
+    $debug = false;
 
     $name = $_POST['name'];
     $mail = $_POST['mail'];
