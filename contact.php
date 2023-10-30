@@ -10,7 +10,7 @@
 </head>
 <body class="processing">
 <h1>
-<a href="index.php" style="text-decoration: underline;">Home</a>
+<a href="../" style="text-decoration: underline;">Home</a>
 </h1>
 
 <?php //include 'nav.php'; ?>

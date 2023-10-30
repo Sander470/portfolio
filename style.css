@@ -185,8 +185,7 @@ nav ul li {
 /* contactform */
 #contact {
     background: var(--secondaryTxt);
-    padding-top: 5vh;
-    padding-bottom: 10vh;
+    padding: 10vh 0;
     display: grid;
     grid-template-columns: 1fr 50vw 1fr;
     color: var(--primary);
