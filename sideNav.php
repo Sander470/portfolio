@@ -1,12 +1,12 @@
-<nav id="Snav">
-    <div class="SnavBar">
-        <p class="headerGradient"><a href="#top">Alex</a></p>
-        <div class="SnavItems">
-            <ul class="Snav">
-                <li class="navlinks"><a href="#about">About</a></li>
-                <li class="navlinks"><a href="#projects">Projects</a></li>
-                <li class="navlinks"><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
+<head>
+    <link rel="stylesheet" href="styleSNav.css">
+    <title>you're not supposed to be here</title>
+</head>
+<nav class="Snav">
+    <ul>
+        <li class="navLinks"><a href="#top">Home</a></li>
+        <li class="navlinks"><a href="#about">About</a></li>
+        <li class="navlinks"><a href="#projects">Projects</a></li>
+        <li class="navlinks"><a href="#contact">Contact</a></li>
+    </ul>
 </nav>

@@ -1,36 +1,50 @@
 /* Navbar */
-/* .Snav {
-    top: 0;
+* {
+    /*box-sizing: border-box;*/
+}
+
+.Snav {
+    top: 20vh;
     display: flex;
-    width: 100vw;
-    background: var(--pNav);
-    color: var(--sNav);
     position: sticky;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    background: rgba(93, 93, 93, 0.36);
+    width: 150px;
+    border-radius: 45px;
+    justify-content: center;
+}
+
+.sNav ul {
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 4rem;
+    flex-wrap: wrap;
+    height: 15rem;
 }
-.Snav li {
+
+.Snav li a{
     color: inherit;
-    background: inherit;
+    transition-duration: 0.2s;
+    list-style-type: none;
+    margin: 1rem;
+    padding: 0.7rem;
+    background: #9F9F9F;
+    border-radius: 45px;
+    /*text-align: center;*/
+}
+.sNav li {
+    list-style-type: none;
+}
+
+.Snav li a:hover {
     transition-duration: 0.2s;
 }
-.Snav li:hover {
-    background: var(--sNav);
-    color: var(--pNav);
-    transition-duration: 0.2s;
+
+.navLinks a {
+    text-decoration: none;
+    color: white;
 }
-.navBar {
-    display: flex;
-    width: calc(100vw - 2rem);
-}
-.navItems {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: inherit;
-}
+
 .headerGradient {
     background: linear-gradient(to right, #FF8AFF 15%, #9EFEC3 85%);
     background-clip: text;
@@ -40,6 +54,7 @@
     font-size: 2rem;
     transition-duration: 5s;
 }
+
 .headerGradient:hover {
     background: linear-gradient(to left, #FF8AFF 15%, #9EFEC3 85%);
     background-clip: text;
@@ -47,11 +62,3 @@
     transition-duration: 5s;
 
 }
-.Snav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: flex-end;
-}
-.Snav ul li {
-    margin-left: 1rem;
-} */
